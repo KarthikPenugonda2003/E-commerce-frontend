@@ -17,7 +17,7 @@ const ShopContextProvider = (props)=>{
     const [cartItems, setCartItems] = useState(getDefaultCart());
     
     useEffect(()=>{
-        fetch('http://localhost:4000/allproducts')
+        fetch('https://shopify-p3ou-api.onrender.com/allproducts')
         .then((response)=>response.json())
         .then((data)=>setAll_Product(data))
     },[])
@@ -25,7 +25,7 @@ const ShopContextProvider = (props)=>{
     const addToCart = (itemId)=>{
         setCartItems((prev)=>({...prev, [itemId]:prev[itemId]+1}))
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4000/addtocart',{
+            fetch('https://shopify-p3ou-api.onrender.com/addtocart',{
                   method:'POST',
                   headers:{
                     Accept:'application/form-data',
