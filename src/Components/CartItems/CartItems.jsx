@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import './CartItems.css'
 import { ShopContext } from '../../Context/ShopContext'
 import remove_icon from '../Assets/cart_cross_icon.png'
-import GenerateQRCode from '../qr/generateQRCode'
 
 const CartItems = () => {
     const {getTotalCartAmount, all_product, cartItems, removeFromCart} = useContext(ShopContext);
@@ -54,7 +53,7 @@ const CartItems = () => {
                     </div>
                 </div>
                 <button>PROCEED TO CHECKOUT</button>
-            <GenerateQRCode totalCartAmount={getTotalCartAmount()} paymentPhoneNumber={7815868995} />
+            {/* <GenerateQRCode totalCartAmount={getTotalCartAmount()} paymentPhoneNumber={7815868995} /> */}
             </div>
             <div className="cartitems-promocode">
                 <p>If you have a promocode, Enter it here.</p>
